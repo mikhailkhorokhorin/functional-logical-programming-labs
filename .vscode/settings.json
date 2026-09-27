@@ -3,11 +3,16 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "FSharp.fsiExtraParameters": ["--quiet"],
+  "FSharp.fsiExtraParameters": [
+    "--quiet"
+  ],
   "[fsharp]": {
     "editor.defaultFormatter": "ionide.ionide-fsharp"
   },
   "[markdown]": {
     "editor.defaultFormatter": "davidanson.vscode-markdownlint"
+  },
+  "markdownlint.config": {
+    "extends": "${workspaceFolder}/.config/.markdownlint.yaml"
   }
 }

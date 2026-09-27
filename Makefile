@@ -4,7 +4,9 @@ PROLOG_FILES = $(shell find logical -name '*.pl' | sort)
 FSHARP_FILES = $(shell find functional -name '*.fsx' | sort)
 LAB_DIRS = $(shell find logical functional -mindepth 1 -maxdepth 1 -type d | sort)
 
--include local.mk
+PRE_COMMIT_CONFIG := .config/.pre-commit-config.yaml
+
+-include .config/local.mk
 
 .DEFAULT_GOAL := help
 
@@ -21,17 +23,17 @@ help:
 	@echo "make clean                                   remove build outputs"
 
 setup: tools
-	pre-commit install
+	pre-commit install -c $(PRE_COMMIT_CONFIG)
 
 tools:
 	dotnet tool restore
 
 format: tools
-	-pre-commit run --all-files
+	-pre-commit run -c $(PRE_COMMIT_CONFIG) --all-files
 	dotnet fantomas $(FSHARP_FILES)
 
 lint: tools
-	pre-commit run --all-files --show-diff-on-failure
+	pre-commit run -c $(PRE_COMMIT_CONFIG) --all-files --show-diff-on-failure
 	dotnet fantomas --check $(FSHARP_FILES)
 	@for file in $(PROLOG_FILES); do \
 		echo "swipl check $$file"; \
