@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "lab",
+      "type": "pickString",
+      "description": "Lab",
+      "options": [
+        "logical/lab1",
+        "logical/lab2",
+        "logical/lab3",
+        "functional/lab1"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "label": "Run",
+      "type": "shell",
+      "command": "make run LAB=${input:lab}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Format",
+      "type": "shell",
+      "command": "make format",
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint",
+      "type": "shell",
+      "command": "make lint",
+      "problemMatcher": []
+    },
+    {
+      "label": "CI",
+      "type": "shell",
+      "command": "make ci",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,14 +1,18 @@
 {
-    "name": "F# & Prolog",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "Ionide.Ionide-fsharp",
-                "arthurwang.vsc-prolog"
-            ]
-        }
+  "name": "F# and Prolog Labs",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "make setup",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ionide.ionide-fsharp",
+        "arthurwang.vsc-prolog",
+        "editorconfig.editorconfig",
+        "davidanson.vscode-markdownlint"
+      ]
     }
+  }
 }

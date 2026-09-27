@@ -1,11 +1,17 @@
-# Laboratory works on logical programming in Prolog and on functional programming in F#
+# Functional and Logical Programming Labs
 
-## [Logical №1. List Operations & Student Database](logical/lab1/)
+Laboratory works on logical programming in SWI-Prolog and functional programming in F#.
 
-## [Logical №2. Logic Puzzle](logical/lab2/)
+## Logical Programming
 
-## [Logical №3. State Space Search (DFS / BFS / IDDFS)](logical/lab3/)
+| No. | Topic |
+| --- | --- |
+| 1 | [List Operations and Student Database](logical/lab1/) |
+| 2 | [Bird Fanciers Logic Puzzle](logical/lab2/) |
+| 3 | [State Space Search (DFS, BFS, IDDFS)](logical/lab3/) |
 
----
+## Functional Programming
 
-## [Functional №1. Root Finding & Taylor Series](functional/lab1/)
+| No. | Topic |
+| --- | --- |
+| 1 | [Root Finding and Taylor Series](functional/lab1/) |
